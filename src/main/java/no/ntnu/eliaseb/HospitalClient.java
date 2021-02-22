@@ -3,6 +3,6 @@ package no.ntnu.eliaseb;
 public class HospitalClient {
     public static void main(String[] args) {
 
-        System.out.println("Hello Worldtest");
+        System.out.println("Hello Worldtest Siste sjekk");
     }
 }
