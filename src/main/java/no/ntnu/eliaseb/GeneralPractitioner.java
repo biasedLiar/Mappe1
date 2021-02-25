@@ -1,7 +1,7 @@
 package no.ntnu.eliaseb;
 
-public class GeneralPractioner extends Doctor{
-    public GeneralPractioner(String firstName, String lastName, String socialSecurityNumber) {
+public class GeneralPractitioner extends Doctor{
+    public GeneralPractitioner(String firstName, String lastName, String socialSecurityNumber) {
         super(firstName, lastName, socialSecurityNumber);
     }
 
@@ -12,7 +12,7 @@ public class GeneralPractioner extends Doctor{
 
     @Override
     public String toString() {
-        return "GeneralPractioner{" +
+        return "GeneralPractitioner{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", socialSecurityNumber='" + socialSecurityNumber + '\'' +
