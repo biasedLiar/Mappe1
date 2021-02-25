@@ -1,9 +1,12 @@
 package no.ntnu.eliaseb;
 
-public class Doctor extends Employee{
+public abstract class Doctor extends Employee{
     public Doctor(String firstName, String lastName, String socialSecurityNumber) {
         super(firstName, lastName, socialSecurityNumber);
     }
+
+    public abstract void setDiagnosis(Patient patient, String diagnosis);
+
 
     @Override
     public String toString() {
@@ -16,8 +19,6 @@ public class Doctor extends Employee{
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
         return super.equals(o);
     }
 
