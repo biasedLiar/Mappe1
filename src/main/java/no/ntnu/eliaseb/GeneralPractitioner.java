@@ -5,6 +5,11 @@ public class GeneralPractitioner extends Doctor{
         super(firstName, lastName, socialSecurityNumber);
     }
 
+    /**
+     * Sets the diagnosis for a patiant
+     * @param patient the patient we are diagnosing
+     * @param diagnosis the diagnosis we are giving the patient
+     */
     @Override
     public void setDiagnosis(Patient patient, String diagnosis) {
         patient.setDiagnosis(diagnosis);
@@ -15,7 +20,7 @@ public class GeneralPractitioner extends Doctor{
         return "GeneralPractitioner{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", socialSecurityNumber='" + socialSecurityNumber + '\'' +
+                ", socialSecuritsdfyNumber='" + socialSecurityNumber + '\'' +
                 '}';
     }
 
