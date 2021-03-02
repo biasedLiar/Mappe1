@@ -2,7 +2,7 @@ package no.ntnu.eliaseb;
 
 import java.util.Objects;
 
-public class Patient extends Person {
+public class Patient extends Person implements Diagnosable{
     private String diagnosis;
 
     public Patient(String firstName, String lastName, String socialSecurityNumber, String diagnosis) {
@@ -14,6 +14,7 @@ public class Patient extends Person {
         return diagnosis;
     }
 
+    @Override
     public void setDiagnosis(String diagnosis) {
         this.diagnosis = diagnosis;
     }
