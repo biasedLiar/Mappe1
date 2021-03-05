@@ -20,7 +20,7 @@ public class GeneralPractitioner extends Doctor{
         return "GeneralPractitioner{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", socialSecuritsdfyNumber='" + socialSecurityNumber + '\'' +
+                ", socialSecurityNumber='" + socialSecurityNumber + '\'' +
                 '}';
     }
 
