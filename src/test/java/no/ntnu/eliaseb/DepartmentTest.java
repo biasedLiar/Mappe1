@@ -18,26 +18,68 @@ public class DepartmentTest {
     }
 
     @Nested
-    class APersonIsRemoved{
+    class PersonIsRemoved{
 
         @Test
         public void surgeonIsRemoved(){
-            boolean exception = false;
+            boolean exceptionTriggered = false;
             Surgeon surgeon = new Surgeon("Ole", "Nordmann", "123456789");
             department.addEmployee(surgeon);
             try {
                 department.remove(surgeon);
             } catch (RemoveException e){
-                exception = true;
+                exceptionTriggered = true;
             }
-            assertFalse(exception);
+            assertFalse(exceptionTriggered);
         }
 
+        @Test
+        public void generalPractitionerIsRemoved(){
+            boolean exceptionTriggered = false;
+            GeneralPractitioner generalPractitioner = new GeneralPractitioner("Ole", "Nordmann", "123456789");
+            department.addEmployee(generalPractitioner);
+            try {
+                department.remove(generalPractitioner);
+            } catch (RemoveException e){
+                exceptionTriggered = true;
+            }
+            assertFalse(exceptionTriggered);
+        }
 
+        @Test
+        public void nurseIsRemoved(){
+            boolean exceptionTriggered = false;
+            Nurse nurse = new Nurse("Ole", "Nordmann", "123456789");
+            department.addEmployee(nurse);
+            try {
+                department.remove(nurse);
+            } catch (RemoveException e){
+                exceptionTriggered = true;
+            }
+            assertFalse(exceptionTriggered);
+        }
 
+        @Test
+        public void patientIsRemoved(){
+            boolean exceptionTriggered = false;
+            Patient patient = new Patient("Ole", "Nordmann", "123456789");
+            department.addPatient(patient);
+            try {
+                department.remove(patient);
+            } catch (RemoveException e){
+                exceptionTriggered = true;
+            }
+            assertFalse(exceptionTriggered);
+        }
+    }
 
+    class PersonIsNotRemoved{
 
-
+        @Test(expected = IllegalArgumentException.class)
+        public void testExpected() throws IllegalArgumentException
+        {
+            throw new IllegalArgumentException();
+        }
     }
 
 }
