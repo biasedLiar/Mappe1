@@ -81,6 +81,14 @@ public class Department {
     }
 
     /**
+     * empties the list of employees and patients.
+     */
+    public void emptyDepartment(){
+        employees.clear();
+        patients.clear();
+    }
+
+    /**
      * checks if the department is equal to the object being passed
      * @param o the object we are checking if is equal to this department
      * @return true if they are identical, false if they are different
