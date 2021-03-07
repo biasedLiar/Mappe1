@@ -67,14 +67,23 @@ public class Department {
     }
 
 
-    public void remove(Person person){
-        //
+    /**
+     * Removes a employee or patient from the hospital.
+     * @param person the person being removed.
+     * @throws RemoveException Throws exception if the removed person is neither registered as an employee or patient.
+     */
+    public void remove(Person person) throws RemoveException {
+        if(!employees.remove(person)){
+            if(!patients.remove(person)){
+                throw new RemoveException("Person is neither employee or patient.");
+            }
+        }
     }
 
     /**
      * checks if the department is equal to the object being passed
      * @param o the object we are checking if is equal to this department
-     * @return true if they are identical, false if they are diffferent
+     * @return true if they are identical, false if they are different
      */
     @Override
     public boolean equals(Object o) {
