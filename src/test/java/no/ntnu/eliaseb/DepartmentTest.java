@@ -100,9 +100,21 @@ public class DepartmentTest {
             }
             assertTrue(exceptionTriggered);
         }
-
         @Test
         public void wrongPersonInDepartment(){
+            boolean exceptionTriggered = false;
+            Patient patient = new Patient("Lise", "Lund", "987654321");
+            Patient patient2 = new Patient("Ole", "Nordmann", "123456789");
+            department.addPatient(patient);
+            try {
+                department.remove(patient2);
+            } catch (RemoveException e){
+                exceptionTriggered = true;
+            }
+            assertTrue(exceptionTriggered);
+        }
+        @Test
+        public void wrongPersonTypeInDepartment(){
             boolean exceptionTriggered = false;
             Nurse nurse = new Nurse("Ole", "Nordmann", "123456789");
             Patient patient = new Patient("Ole", "Nordmann", "123456789");
