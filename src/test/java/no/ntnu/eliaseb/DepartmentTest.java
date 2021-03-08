@@ -4,8 +4,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import java.util.ArrayList;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class DepartmentTest {
     private Department department = new Department("Haukeland Sykehus");
@@ -30,7 +31,8 @@ public class DepartmentTest {
             } catch (RemoveException e){
                 exceptionTriggered = true;
             }
-            assertFalse(exceptionTriggered);
+            assertFalse(exceptionTriggered); //Sjekker at remove exception ikke skjedde
+            assertEquals(department.getEmployees(), new ArrayList<Employee>()); //Sjekker at employees listen er tom
         }
 
         @Test
@@ -43,7 +45,9 @@ public class DepartmentTest {
             } catch (RemoveException e){
                 exceptionTriggered = true;
             }
-            assertFalse(exceptionTriggered);
+            assertFalse(exceptionTriggered);//Sjekker at remove exception ikke skjedde
+            assertEquals(department.getEmployees(), new ArrayList<Employee>()); //Sjekker at employees listen er tom
+
         }
 
         @Test
@@ -56,7 +60,9 @@ public class DepartmentTest {
             } catch (RemoveException e){
                 exceptionTriggered = true;
             }
-            assertFalse(exceptionTriggered);
+            assertFalse(exceptionTriggered);//Sjekker at remove exception ikke skjedde
+            assertEquals(department.getEmployees(), new ArrayList<Employee>()); //Sjekker at employees listen er tom
+
         }
 
         @Test
@@ -69,7 +75,9 @@ public class DepartmentTest {
             } catch (RemoveException e){
                 exceptionTriggered = true;
             }
-            assertFalse(exceptionTriggered);
+            assertFalse(exceptionTriggered);//Sjekker at remove exception ikke skjedde
+            assertEquals(department.getPatients(), new ArrayList<Patient>()); //Sjekker at Patient listen er tom
+
         }
 
         @Test
@@ -82,7 +90,9 @@ public class DepartmentTest {
             } catch (RemoveException e){
                 exceptionTriggered = true;
             }
-            assertFalse(exceptionTriggered);
+            assertFalse(exceptionTriggered);//Sjekker at remove exception ikke skjedde
+            assertEquals(department.getPatients(), new ArrayList<Patient>()); //Sjekker at Patient listen er tom
+
         }
     }
     @Nested
@@ -98,7 +108,7 @@ public class DepartmentTest {
             } catch (RemoveException e){
                 exceptionTriggered = true;
             }
-            assertTrue(exceptionTriggered);
+            assertTrue(exceptionTriggered);//Sjekker at remove exception skjedde
         }
         @Test
         public void wrongPersonInDepartment(){
@@ -111,7 +121,7 @@ public class DepartmentTest {
             } catch (RemoveException e){
                 exceptionTriggered = true;
             }
-            assertTrue(exceptionTriggered);
+            assertTrue(exceptionTriggered); //Sjekker at remove exception skjedde
         }
         @Test
         public void wrongPersonTypeInDepartment(){
@@ -124,7 +134,7 @@ public class DepartmentTest {
             } catch (RemoveException e){
                 exceptionTriggered = true;
             }
-            assertTrue(exceptionTriggered);
+            assertTrue(exceptionTriggered); //Sjekker at remove exception skjedde
         }
 
         @Test
@@ -138,7 +148,7 @@ public class DepartmentTest {
             } catch (RemoveException e){
                 exceptionTriggered = true;
             }
-            assertTrue(exceptionTriggered);
+            assertTrue(exceptionTriggered); //Sjekker at remove exception skjedde
         }
 
         @Test
@@ -151,7 +161,7 @@ public class DepartmentTest {
             } catch (RemoveException e){
                 exceptionTriggered = true;
             }
-            assertTrue(exceptionTriggered);
+            assertTrue(exceptionTriggered); //Sjekker at remove exception skjedde
         }
     }
 

@@ -1,6 +1,6 @@
 package no.ntnu.eliaseb;
 
-public abstract class Employee extends Person{
+public class Employee extends Person{
     /**
      * Creates a  employee object.
      * @param firstName The first name of the employee

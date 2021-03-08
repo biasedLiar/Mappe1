@@ -1,25 +1,18 @@
 package no.ntnu.eliaseb;
 
+import java.util.ArrayList;
+
 public class HospitalClient {
     public static void main(String[] args) {
 
-        System.out.println("Hello Worldtestf Sistesdf sjekk");
-        Surgeon surg = new Surgeon("Elias", "Baird", "234234234");
-        System.out.println(surg);
-        Department dep = new Department("Haukeland sykehus.");
-        dep.addEmployee(surg);
-        System.out.println(dep);
+        Hospital hospital = new Hospital("Haukeland Sykehus");
+        HospitalTestData.fillRegisterWithTestData(hospital);
+        Employee employee = new Employee("Odd Even", "Primtallet", "");
+        ArrayList<Department> departments= hospital.getDepartments();
         try {
-            dep.remove(surg);
+            departments.get(0).remove(employee);
         } catch (RemoveException e){
-            System.out.println(e);
+
         }
-        System.out.println(dep);
-        try {
-            dep.remove(surg);
-        } catch (RemoveException e){
-            System.out.println(e);
-        }
-        System.out.println(dep);
     }
 }
