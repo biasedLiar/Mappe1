@@ -1,5 +1,6 @@
 package no.ntnu.eliaseb;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 
 public class HospitalClient {
@@ -8,11 +9,20 @@ public class HospitalClient {
         Hospital hospital = new Hospital("Haukeland Sykehus");
         HospitalTestData.fillRegisterWithTestData(hospital);
         Employee employee = new Employee("Odd Even", "Primtallet", "");
+        Patient patient = new Patient("Berte", "Solheim", "321321321");
         ArrayList<Department> departments= hospital.getDepartments();
         try {
             departments.get(0).remove(employee);
+            System.out.println("Employee successfully removed");
         } catch (RemoveException e){
-
+            System.out.println(e);
         }
+        try{
+            departments.get(0).remove(patient);
+            System.out.println("Something went wrong. Non existing employee removed.");
+        } catch (RemoveException e){
+            System.out.println("Remove exception as expected.");
+        }
+
     }
 }
