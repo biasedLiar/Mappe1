@@ -3,6 +3,10 @@ package no.ntnu.eliaseb;
 import java.util.ArrayList;
 import java.util.Objects;
 
+/**
+ * This class represents a hospital.
+ * It has a name, and an arraylist of departments.
+ */
 public class Hospital {
     private final String hospitalName;
     private ArrayList<Department> departments;

@@ -2,6 +2,9 @@ package no.ntnu.eliaseb;
 
 import java.util.Objects;
 
+/**
+ * This class represents a person and is abstract. It has fields for first name, last name, and social security number.
+ */
 public abstract class Person {
     protected String firstName;
     protected String lastName;
@@ -98,8 +101,8 @@ public abstract class Person {
     }
 
     /**
-     * Creates the tostring for the person, showing all fields.
-     * @return The tostring of the person
+     * Creates the toString for the person, showing all fields.
+     * @return The toString of the person
      */
     @Override
     public String toString() {

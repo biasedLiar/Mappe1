@@ -1,16 +1,23 @@
 package no.ntnu.eliaseb;
 
+/**
+ * This class doesn't represent anything, but is rather used to fill the hospital with data.
+ */
 public final class HospitalTestData {
+    /**
+     * Would create a HospitalTestData object, but is never called.
+     */
     private HospitalTestData() {
         // not called
     }
     /**
+     * Fills a hospital with data.
      * @param hospital The hospital we are filling with test data
      */
     public static void fillRegisterWithTestData(final Hospital hospital) {
         // Add some departments
         Department emergency = new Department("Akutten");
-        emergency.getEmployees().add(new Employee("Odd Even", "Primtallet", ""));
+            emergency.getEmployees().add(new Employee("Odd Even", "Primtallet", ""));
         emergency.getEmployees().add(new Employee("Huppasahn", "DelFinito", ""));
         emergency.getEmployees().add(new Employee("Rigmor", "Mortis", ""));
         emergency.getEmployees().add(new GeneralPractitioner("Inco", "Gnito", ""));

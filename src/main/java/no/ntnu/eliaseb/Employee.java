@@ -1,5 +1,9 @@
 package no.ntnu.eliaseb;
 
+/**
+ * This class represents an employee, and is a subclass of Person.
+ * It inherits the fields first name, last name and social security number from Person.
+ */
 public class Employee extends Person{
     /**
      * Creates a  employee object.

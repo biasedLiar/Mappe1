@@ -1,8 +1,10 @@
 package no.ntnu.eliaseb;
 
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 
+/**
+ * This class is the client that runs our program.
+ */
 public class HospitalClient {
     public static void main(String[] args) {
 

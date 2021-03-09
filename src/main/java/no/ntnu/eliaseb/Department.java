@@ -3,6 +3,10 @@ package no.ntnu.eliaseb;
 import java.util.ArrayList;
 import java.util.Objects;
 
+/**
+ * This class represents a department.
+ * It's fields are the department name, an arraylist of employees and an arraylist of patients.
+ */
 public class Department {
     private String departmentName;
     private ArrayList<Employee> employees;
@@ -73,6 +77,7 @@ public class Department {
      * @throws RemoveException Throws exception if the removed person is neither registered as an employee or patient.
      */
     public void remove(Person person) throws RemoveException {
+        //the remove() method returns true if person is removed and false if it is not.
         if(!employees.remove(person)){
             if(!patients.remove(person)){
                 throw new RemoveException("Person is neither employee or patient.");
